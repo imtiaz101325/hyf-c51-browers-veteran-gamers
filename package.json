@@ -1,5 +1,5 @@
 {
-  "name": "js-quiz-starter",
+  "name": "hyf-c51-browsers-veteran-gamers",
   "version": "1.0.0",
   "scripts": {
     "prettier:write": "prettier --write .",
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/HackYourFuture/browser-quiz-project-starter.git"
   },
-  "author": "",
+  "author": "Veteran Gamers",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/HackYourFuture/browser-quiz-project-starter/issues"
