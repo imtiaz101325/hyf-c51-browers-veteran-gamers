@@ -1,5 +1,5 @@
 {
-  "name": "c",
+  "name": "hyf-c51-browsers-veteran-gamers",
   "version": "1.0.0",
   "scripts": {
     "prettier:write": "prettier --write .",
