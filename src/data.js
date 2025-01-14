@@ -14,47 +14,115 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: 'Which video game character is known as the "Plumber"?',
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
-      },
-      correct: 'c',
-      selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
-        },
-      ],
-    },
-    {
-      text: 'What does `typeof` do?',
-      answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'Link',
+        b: 'Mario',
+        c: 'Sonic',
+        d: 'Donkey Kong',
       },
       correct: 'b',
       selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
-        },
-      ],
     },
-    // Add more questions here
+    {
+      text: 'In which game would you find the character "Master Chief"?',
+      answers: {
+        a: 'Call of Duty',
+        b: 'Halo',
+        c: 'Gears of War',
+        d: 'Destiny',
+      },
+      correct: 'b',
+      selected: null,
+    },
+    {
+      text:
+        'Which video game series is known for the phrase "It’s dangerous to go alone! Take this."?',
+      answers: {
+        a: 'The Legend of Zelda',
+        b: 'Final Fantasy',
+        c: 'Skyrim',
+        d: 'Dark Souls',
+      },
+      correct: 'a',
+      selected: null,
+    },
+    {
+      text: 'What is the main objective in the game "Minecraft"?',
+      answers: {
+        a: 'To defeat the Ender Dragon',
+        b: 'To collect all the Pokemon',
+        c: 'To build the tallest tower',
+        d: 'To solve puzzles and escape dungeons',
+      },
+      correct: 'a',
+      selected: null,
+    },
+    {
+      text: 'Which gaming console is known for its motion-sensing controllers?',
+      answers: {
+        a: 'Xbox 360',
+        b: 'PlayStation 4',
+        c: 'Nintendo Wii',
+        d: 'Sega Genesis',
+      },
+      correct: 'c',
+      selected: null,
+    },
+    {
+      text: 'Which of these is a racing video game franchise?',
+      answers: {
+        a: 'Gran Turismo',
+        b: 'Battlefield',
+        c: 'Halo',
+        d: 'World of Warcraft',
+      },
+      correct: 'a',
+      selected: null,
+    },
+    {
+      text: 'Which game features the character "Samus Aran"?',
+      answers: {
+        a: 'Metroid',
+        b: 'Zelda',
+        c: 'Super Mario',
+        d: 'Star Fox',
+      },
+      correct: 'a',
+      selected: null,
+    },
+    {
+      text: 'Which game series is set in the fictional world of "Tamriel"?',
+      answers: {
+        a: 'The Elder Scrolls',
+        b: 'Dark Souls',
+        c: 'Dragon Age',
+        d: 'Final Fantasy',
+      },
+      correct: 'a',
+      selected: null,
+    },
+    {
+      text: 'Which video game character is known for saying "Hadouken!"?',
+      answers: {
+        a: 'Ryu',
+        b: 'Liu Kang',
+        c: 'Sagat',
+        d: 'Ken',
+      },
+      correct: 'a',
+      selected: null,
+    },
+    {
+      text: 'In which game do you control a car that plays soccer?',
+      answers: {
+        a: 'Rocket League',
+        b: 'Gran Turismo',
+        c: 'FIFA',
+        d: 'Need for Speed',
+      },
+      correct: 'a',
+      selected: null,
+    },
   ],
 };
