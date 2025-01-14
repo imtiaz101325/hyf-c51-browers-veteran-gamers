@@ -3,9 +3,13 @@
  * @returns {Element}
  */
 export const createAnswerElement = (key, answerText) => {
+
   const element = document.createElement('li');
   element.innerHTML = String.raw`
-    ${key}: ${answerText};
+   <div>
+    <input type="radio" id="${key}" name="radioButton" value="text" checked />
+    <label >  ${key}: ${answerText}</label>
+  </div>
   `;
   return element;
 };
