@@ -14,47 +14,179 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: 'What is the best-selling video game of all time?',
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
+        a: 'Minecraft',
+        b: 'Grand Theft Auto V',
+        c: 'Tetris',
+        d: 'The Legend of Zelda: Breath of the Wild',
       },
-      correct: 'c',
+      correct: 'a',
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'Game History',
+          href:
+            'https://en.wikipedia.org/wiki/List_of_best-selling_video_games',
         },
       ],
     },
     {
-      text: 'What does `typeof` do?',
+      text: 'Which video game character is known as the "Blue Blur"?',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'Mega Man',
+        b: 'Sonic the Hedgehog',
+        c: 'Crash Bandicoot',
+        d: 'Spyro the Dragon',
       },
       correct: 'b',
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          text: 'Sonic on SEGA',
+          href: 'https://www.sega.com/games/sonic-origins',
         },
       ],
     },
-    // Add more questions here
+    {
+      text: 'Which game features a battle royale mode called "Warzone"?',
+      answers: {
+        a: 'Call of Duty',
+        b: 'Fortnite',
+        c: 'Apex Legends',
+        d: "PlayerUnknown's Battlegrounds (PUBG)",
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'Warzone Info',
+          href: 'https://www.callofduty.com/warzone',
+        },
+      ],
+    },
+    {
+      text:
+        'In "The Legend of Zelda" series, what is the name of the princess?',
+      answers: {
+        a: 'Zelda',
+        b: 'Link',
+        c: 'Ganon',
+        d: 'Midna',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'Zelda Series',
+          href: 'https://www.zelda.com/',
+        },
+      ],
+    },
+    {
+      text: 'Which game developer created "The Last of Us"?',
+      answers: {
+        a: 'Rockstar Games',
+        b: 'Naughty Dog',
+        c: 'Bungie',
+        d: 'CD Projekt Red',
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'Naughty Dog Games',
+          href: 'https://www.naughtydog.com/games',
+        },
+      ],
+    },
+    {
+      text: 'What is the name of the main protagonist in the "Halo" series?',
+      answers: {
+        a: 'Commander Shepard',
+        b: 'Solid Snake',
+        c: 'Master Chief',
+        d: 'Marcus Fenix',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'Halo Series Info',
+          href: 'https://www.halowaypoint.com/',
+        },
+      ],
+    },
+    {
+      text:
+        'Which game series features locations such as Whiterun, Solitude, and Windhelm?',
+      answers: {
+        a: 'The Elder Scrolls',
+        b: 'Dark Souls',
+        c: 'Dragon Age',
+        d: 'World of Warcraft',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'Elder Scrolls Games',
+          href: 'https://elderscrolls.bethesda.net/',
+        },
+      ],
+    },
+    {
+      text:
+        'In "Fortnite," what is the term for the shrinking area that players must stay within?',
+      answers: {
+        a: 'Storm',
+        b: 'Safe Zone',
+        c: 'Ring',
+        d: 'Circle',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'Fortnite Info',
+          href: 'https://www.epicgames.com/fortnite',
+        },
+      ],
+    },
+    {
+      text:
+        'Which character in "Overwatch" is known for saying, "Cheers, love! The cavalry’s here!"?',
+      answers: {
+        a: 'Mercy',
+        b: 'Tracer',
+        c: 'Widowmaker',
+        d: 'D.Va',
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'Overwatch Heroes',
+          href: 'https://playoverwatch.com/en-us/heroes/',
+        },
+      ],
+    },
+    {
+      text: 'What is the name of the protagonist in the "God of War" series?',
+      answers: {
+        a: 'Kratos',
+        b: 'Zeus',
+        c: 'Ares',
+        d: 'Hercules',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'God of War Info',
+          href: 'https://www.playstation.com/en-us/games/god-of-war/',
+        },
+      ],
+    },
   ],
 };
