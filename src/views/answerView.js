@@ -6,10 +6,13 @@ export const createAnswerElement = (key, answerText) => {
 
   const element = document.createElement('li');
   element.innerHTML = String.raw`
-   <div>
-    <input type="radio" id="${key}" name="radioButton" value="text" checked />
+  <div>
+    <input type="radio" id="${key}" name="radioButton" value="${key}" checked />
     <label >  ${key}: ${answerText}</label>
-  </div>
+    </div>
   `;
+  
   return element;
 };
+
+

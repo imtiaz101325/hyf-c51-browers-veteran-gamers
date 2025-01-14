@@ -12,7 +12,7 @@ export const initQuestionPage = () => {
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
+console.log([quizData.currentQuestionIndex])
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
@@ -22,7 +22,14 @@ export const initQuestionPage = () => {
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
-  }
+
+    // found element with tag input and listener. Look checked radiobutton or not. if yes value this btn is  currentQuestion.selected
+    answerElement.querySelector('input').addEventListener('change', function() {
+    if (this.checked) {
+      currentQuestion.selected = this.id;
+    }
+  });}
+
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
@@ -34,3 +41,7 @@ const nextQuestion = () => {
 
   initQuestionPage();
 };
+
+
+
+
