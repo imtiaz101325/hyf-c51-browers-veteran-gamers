@@ -30,8 +30,6 @@ export const initQuestionPage = () => {
           currentQuestion.selected = this.id;
         }
       });
-
-    
   }
 
   document
