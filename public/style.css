@@ -15,3 +15,8 @@
 ul {
   list-style: none;
 }
+
+/* Highlight the correct answer */
+.highlight-correct {
+  background-color: green;
+}

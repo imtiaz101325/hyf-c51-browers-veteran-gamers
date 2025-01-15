@@ -34,3 +34,33 @@ const nextQuestion = () => {
 
   initQuestionPage();
 };
+
+// event listener function for 'skip question' button
+const skipQuestion = () => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const correctAnswer = currentQuestion.correct;
+
+  // Highlighting the correct answer:
+
+  const answersList = document.getElementById(ANSWERS_LIST_ID);
+  if (answersList) {
+    const correctAnswerElement = answersList.querySelector(
+      `[data-answer="${correctAnswer}"]`
+    );
+    if (correctAnswerElement) {
+      correctAnswerElement.classList.add('highlight-correct');
+    }
+  }
+
+  // waiting function for 2 seconds, then move to the next question
+  setTimeout(() => {
+    quizData.currentQuestionIndex += 1;
+    initQuestionPage();
+  }, 2000);
+};
+
+// To attach event listener for the skip question button
+
+document
+  .getElementById('skip-question-button')
+  .addEventListener('click', skipQuestion);
