@@ -1,6 +1,7 @@
 import { USER_INTERFACE_ID, START_QUIZ_BUTTON_ID } from '../constants.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
+import { PLAYER_NAME_INPUT_ID } from '../constants.js';
 
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -15,5 +16,8 @@ export const initWelcomePage = () => {
 };
 
 const startQuiz = () => {
+  const PlayerInputName = document.getElementById(PLAYER_NAME_INPUT_ID);
+  const PLayerName = PlayerInputName.value || 'player';
+  localStorage.setItem('playerName', PLayerName);
   initQuestionPage();
 };
