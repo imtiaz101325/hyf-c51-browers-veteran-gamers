@@ -34,11 +34,9 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-
     },
     {
-      text:
-        'Which video game series is known for the phrase "It’s dangerous to go alone! Take this."?',
+      text: 'Which video game series is known for the phrase "It’s dangerous to go alone! Take this."?',
       answers: {
         a: 'The Legend of Zelda',
         b: 'Final Fantasy',
