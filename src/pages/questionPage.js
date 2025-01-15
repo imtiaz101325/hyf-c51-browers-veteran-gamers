@@ -6,6 +6,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { initFinalPage } from './finalPage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -31,10 +32,19 @@ export const initQuestionPage = () => {
         }
       });
   }
-
-  document
-    .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
+  //  next question button will move to next question if the questions are finished it will lunch the final page
+  if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
+    document
+      .getElementById(NEXT_QUESTION_BUTTON_ID)
+      .addEventListener('click', toFinalPage);
+  } else {
+    document
+      .getElementById(NEXT_QUESTION_BUTTON_ID)
+      .addEventListener('click', nextQuestion);
+  }
+};
+const toFinalPage = () => {
+  initFinalPage();
 };
 
 const nextQuestion = () => {
