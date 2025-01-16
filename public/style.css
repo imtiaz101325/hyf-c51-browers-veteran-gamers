@@ -15,3 +15,14 @@
 ul {
   list-style: none;
 }
+
+.correctAnswer {
+  background-color: green;
+  border: solid 1px black;
+  margin: 10px;
+}
+
+.wrongAnswer {
+  background-color: red;
+  border: solid 1px black;
+}
