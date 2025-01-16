@@ -48,7 +48,14 @@ const toFinalPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  const currentQuestion  = quizData.questions[quizData.currentQuestionIndex];
+
+  // check if the selected answer is correct
+  if (currentQuestion.selected === currentQuestion.correct){
+    quizData.scoreResult +=1; // increase the score result when the selected answer is corect
+  }
+  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1; 
+
 
   initQuestionPage();
 };

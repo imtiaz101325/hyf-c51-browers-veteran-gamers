@@ -8,6 +8,7 @@ export const initFinalPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
+  
   const finalPageElement = createFinalPAgeElement();
   userInterface.appendChild(finalPageElement);
 
@@ -17,5 +18,6 @@ export const initFinalPage = () => {
 };
 const restartGame = () => {
   quizData.currentQuestionIndex = 0;
+  quizData.scoreResult = 0 ; // reset the score result again
   initWelcomePage();
 };
