@@ -15,3 +15,73 @@
 ul {
   list-style: none;
 }
+
+body {
+  background: #dff6ff;
+}
+h1 {
+  color: #001230;
+  text-align: center;
+}
+#user-interface {
+  background: #fff;
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto 0;
+  border-radius: 10px;
+  padding: 30px;
+}
+#answers-list {
+  background: #fff;
+  color: #030303;
+  font-weight: 500;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 4;
+}
+#answers-list li {
+  padding: 15px 20px;
+  font-size: 18px;
+  color: #141212;
+  cursor: pointer;
+  border: 0.5px solid #000000;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+#answers-list li:hover {
+  background: #dff6ff;
+  color: #000000;
+  transform: scale(1.03);
+}
+
+#start-quiz-button {
+  background: #001230;
+  color: #fff;
+  font-weight: 500;
+  width: 150px;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+}
+#start-quiz-button:hover {
+  background: rgb(0, 85, 160);
+  transform: scale(1.03);
+}
+
+#next-question-button {
+  background: #001230;
+  color: #fff;
+  font-weight: 500;
+  width: 150px;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+}
+#next-question-button:hover {
+  background: rgb(0, 85, 160);
+  transform: scale(1.03);
+}
