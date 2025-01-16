@@ -23,6 +23,11 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
 
+    // here added listener to be able to select answer anywhere on the li elemnt not only on the btn
+    const input = answerElement.querySelector('input');
+
+    answerElement.addEventListener('click', () => input.click());
+
     // found element with tag input and listener. Look checked radioButton or not. if yes value this btn is  currentQuestion.selected
     answerElement
       .querySelector('input')
@@ -48,14 +53,13 @@ const toFinalPage = () => {
 };
 
 const nextQuestion = () => {
-  const currentQuestion  = quizData.questions[quizData.currentQuestionIndex];
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   // check if the selected answer is correct
-  if (currentQuestion.selected === currentQuestion.correct){
-    quizData.scoreResult +=1; // increase the score result when the selected answer is corect
+  if (currentQuestion.selected === currentQuestion.correct) {
+    quizData.scoreResult += 1; // increase the score result when the selected answer is corect
   }
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1; 
-
+  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
 };

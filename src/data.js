@@ -11,7 +11,7 @@
 
 export const quizData = {
   currentQuestionIndex: 0,
-  scoreResult: 0, // the secore result of the quiz have inial value  0 
+  scoreResult: 0, // the secore result of the quiz have inial value  0
   // the questions in the quiz
   questions: [
     {
