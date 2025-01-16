@@ -1,5 +1,6 @@
 import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { SKIP_QUESTION_BUTTON_ID } from '../constants.js';
 
 /**
  * Create a full question element
@@ -19,9 +20,8 @@ export const createQuestionElement = (question) => {
       Next question
     </button>
 
-    <button id="skip-question-button"> <!-- Directly hardcoding the ID here bcz there is no skip button identifier in the constants.js file-->
-      Skip question
-    </button>
+    <button id="${SKIP_QUESTION_BUTTON_ID}">Skip question</button>
+     
   `;
 
   return element;
