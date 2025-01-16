@@ -2,6 +2,7 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  SKIP_QUESTION_BUTTON_ID,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
@@ -32,7 +33,8 @@ export const initQuestionPage = () => {
         }
       });
   }
-  //  next question button will move to next question if the questions are finished it will lunch the final page
+
+  // Attach event listener to the "Next question" button
   if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
     document
       .getElementById(NEXT_QUESTION_BUTTON_ID)
@@ -42,24 +44,35 @@ export const initQuestionPage = () => {
       .getElementById(NEXT_QUESTION_BUTTON_ID)
       .addEventListener('click', nextQuestion);
   }
+
+  // attach event listener for the skip button
+  document
+    .getElementById(SKIP_QUESTION_BUTTON_ID)
+    ?.addEventListener('click', skipQuestion);
 };
+
 const toFinalPage = () => {
   initFinalPage();
 };
 
 const nextQuestion = () => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+
+  // check if the selected answer is correct
+  if (currentQuestion.selected === currentQuestion.correct) {
+    quizData.scoreResult += 1; // increase the score result when the selected answer is correct
+  }
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
 };
 
-// event listener function for 'skip question' button
+//Event listener function for the skip question button
 const skipQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const correctAnswer = currentQuestion.correct;
 
-  // Highlighting the correct answer:
-
+  //Highlighting the correct answer
   const answersList = document.getElementById(ANSWERS_LIST_ID);
   if (answersList) {
     const correctAnswerElement = answersList.querySelector(
@@ -70,15 +83,9 @@ const skipQuestion = () => {
     }
   }
 
-  // waiting function for 2 seconds, then move to the next question
+  // Waiting for 2 seconds, then moving to the next question
   setTimeout(() => {
     quizData.currentQuestionIndex += 1;
     initQuestionPage();
-  }, 2000);
+  }, 1000);
 };
-
-// To attach event listener for the skip question button
-
-document
-  .getElementById('skip-question-button')
-  .addEventListener('click', skipQuestion);
