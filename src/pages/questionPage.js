@@ -40,8 +40,35 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
 
-    // here added listener to be able to select answer anywhere on the li elemnt not only on the btn
+    const listItems = document.querySelectorAll('li');
+
+    // here added listener to be able to select answer anywhere on the li element not only on the btn
     const input = answerElement.querySelector('input');
+
+    input.addEventListener('change', function () {
+      if (this.checked) {
+        currentQuestion.selected = this.id;
+
+        // remove all classes before choice
+        listItems.forEach((listItem) => {
+          listItem.classList.remove('correctAnswer', 'wrongAnswer');
+        });
+
+        // found current list item
+        const currentLi = document.getElementById(`${this.id}`);
+
+        //found correct list item and add css class correct
+        const correctLi = document.querySelector(`#${currentQuestion.correct}`);
+        correctLi.classList.add('correctAnswer');
+
+        // logics for add class wrongAnswer
+        if (currentLi.id === currentQuestion.correct) {
+          currentLi.classList.add('correctAnswer');
+        } else {
+          currentLi.classList.add('wrongAnswer');
+        }
+      }
+    });
 
     answerElement.addEventListener('click', () => input.click());
 
