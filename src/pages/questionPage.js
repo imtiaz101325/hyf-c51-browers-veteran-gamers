@@ -66,6 +66,8 @@ export const initQuestionPage = () => {
         } else {
           currentLi.classList.add('wrongAnswer');
         }
+        // added this so it can save the answer procces
+        saveProgress();
       }
     });
 
@@ -95,6 +97,16 @@ const toFinalPage = () => {
   initFinalPage();
 };
 
+// trying to store the data in here so i can load it back again in app.js
+const saveProgress = () => {
+  const progress = {
+    currentQuestionIndex: quizData.currentQuestionIndex,
+    scoreResult: quizData.scoreResult,
+    questions: quizData.questions,
+  };
+  localStorage.setItem('quizProgress', JSON.stringify(progress));
+};
+
 const nextQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
@@ -105,4 +117,6 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
+  // after the user press next question button it will update the user interface and update the saved progress data
+  saveProgress();
 };

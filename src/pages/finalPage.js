@@ -16,6 +16,7 @@ export const initFinalPage = () => {
     .addEventListener('click', restartGame);
 };
 const restartGame = () => {
+  localStorage.removeItem('quizProgress');
   quizData.currentQuestionIndex = 0;
   quizData.scoreResult = 0; // reset the score result again
   initWelcomePage();
