@@ -43,10 +43,18 @@ export const initQuestionPage = () => {
 
     // here added listener to be able to select answer anywhere on the li element not only on the btn
     const input = answerElement.querySelector('input');
+    answerElement.addEventListener('click', () => input.click());
 
     input.addEventListener('change', function () {
       if (this.checked) {
         currentQuestion.selected = this.id;
+
+        // disable the inputs to prevent the user from changing his answers
+
+        const answerOptions = document.querySelectorAll(
+          `#${ANSWERS_LIST_ID} input`
+        );
+        answerOptions.forEach((option) => (option.disabled = true));
 
         // remove all classes before choice
         listItems.forEach((listItem) => {
@@ -68,8 +76,6 @@ export const initQuestionPage = () => {
         }
       }
     });
-
-    answerElement.addEventListener('click', () => input.click());
 
     // found element with tag input and listener. Look checked radioButton or not. if yes value this btn is  currentQuestion.selected
     answerElement
