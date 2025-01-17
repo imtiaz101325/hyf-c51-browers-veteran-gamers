@@ -25,7 +25,7 @@ export const initQuestionPage = () => {
   }
   scoreEl.textContent = ` Your score: ${quizData.scoreResult}`;
 
-  // extra,  allowing for new styling if the score is higher than 5
+  // extra, allowing for new styling if the score is higher than 5
   if (quizData.scoreResult > 5) {
     scoreEl.classList.add('good-score');
   } else {
@@ -57,7 +57,7 @@ export const initQuestionPage = () => {
         // found current list item
         const currentLi = document.getElementById(`${this.id}`);
 
-        //found correct list item and add css class correct
+        // found correct list item and add css class correct
         const correctLi = document.querySelector(`#${currentQuestion.correct}`);
         correctLi.classList.add('correctAnswer');
 
@@ -72,7 +72,7 @@ export const initQuestionPage = () => {
 
     answerElement.addEventListener('click', () => input.click());
 
-    // found element with tag input and listener. Look checked radioButton or not. if yes value this btn is  currentQuestion.selected
+    // found element with tag input and listener. Look checked radioButton or not. if yes value this btn is currentQuestion.selected
     answerElement
       .querySelector('input')
       .addEventListener('change', function () {
@@ -93,10 +93,13 @@ export const initQuestionPage = () => {
       .addEventListener('click', nextQuestion);
   }
 
-  // attach event listener for the skip button
-  document
-    .getElementById(SKIP_QUESTION_BUTTON_ID)
-    ?.addEventListener('click', skipQuestion);
+  //  to make sure the skip button exists before attaching the event listener
+  const skipButton = document.getElementById(SKIP_QUESTION_BUTTON_ID);
+  if (skipButton) {
+    skipButton.addEventListener('click', skipQuestion);
+  } else {
+    console.error('Skip question button not found in the DOM');
+  }
 };
 
 const toFinalPage = () => {
@@ -115,23 +118,32 @@ const nextQuestion = () => {
   initQuestionPage();
 };
 
-//Event listener function for the skip question button
+// Updated skipQuestion function
 const skipQuestion = () => {
+  //to fetch the answers list element
+  const answersList = document.getElementById(ANSWERS_LIST_ID);
+
+  if (!answersList) {
+    console.error(`Answers list with ID ${ANSWERS_LIST_ID} not found.`);
+    return; // Exit if the answers list is not found
+  }
+
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const correctAnswer = currentQuestion.correct;
 
-  //Highlighting the correct answer
-  const answersList = document.getElementById(ANSWERS_LIST_ID);
-  if (answersList) {
-    const correctAnswerElement = answersList.querySelector(
-      `[data-answer="${correctAnswer}"]`
-    );
-    if (correctAnswerElement) {
-      correctAnswerElement.classList.add('highlight-correct');
-    }
+  // Highlighting the correct answer
+  const correctAnswerElement = answersList.querySelector(
+    `[data-answer="${correctAnswer}"]`
+  );
+
+  if (correctAnswerElement) {
+    correctAnswerElement.classList.add('highlight-correct'); // Apply highlight
+    console.log('Correct answer highlighted:', correctAnswerElement); // Debugging log
+  } else {
+    console.error('Correct answer element not found!');
   }
 
-  // Waiting for 2 seconds, then moving to the next question
+  // Move to the next question after a short delay
   setTimeout(() => {
     quizData.currentQuestionIndex += 1;
     initQuestionPage();

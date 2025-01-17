@@ -140,3 +140,24 @@ ul#answers-list li.wrongAnswer {
   color: green;
   font-weight: bold;
 }
+
+/* Added .highlight-correct class */
+.highlight-correct {
+  background-color: green;
+  font-weight: bold;
+}
+
+/*  styles for skip-question button */
+#skip-question-button {
+  background-color: #f04e30;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px; /* rounded corners */
+  cursor: pointer;
+}
+
+#skip-question-button:hover {
+  background-color: #d43f26; /* Darker red on hover */
+}
