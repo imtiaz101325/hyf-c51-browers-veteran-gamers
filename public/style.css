@@ -19,10 +19,13 @@ ul {
 body {
   background: #dff6ff;
 }
+
 h1 {
   color: #001230;
   text-align: center;
 }
+
+
 #user-interface {
   background: #fff;
   width: 90%;
@@ -31,6 +34,7 @@ h1 {
   border-radius: 10px;
   padding: 30px;
 }
+
 #answers-list {
   background: #fff;
   color: #030303;
@@ -41,6 +45,7 @@ h1 {
   text-align: left;
   border-radius: 4;
 }
+
 #answers-list li {
   padding: 15px 20px;
   font-size: 18px;
@@ -50,6 +55,7 @@ h1 {
   border-radius: 20px;
   margin: 10px 0;
 }
+
 #answers-list li:hover {
   background: #dff6ff;
   color: #000000;
@@ -66,6 +72,7 @@ h1 {
   margin: 10px;
   border-radius: 20px;
 }
+
 #start-quiz-button:hover {
   background: rgb(0, 85, 160);
   transform: scale(1.03);
@@ -81,7 +88,17 @@ h1 {
   margin: 10px;
   border-radius: 20px;
 }
+
 #next-question-button:hover {
   background: rgb(0, 85, 160);
   transform: scale(1.03);
+}
+
+
+ul#answers-list li.correctAnswer {
+  background-color: lightgreen;
+}
+
+ul#answers-list li.wrongAnswer {
+  background-color: rgb(255, 124, 122);
 }
