@@ -16,6 +16,22 @@ export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionElement = createQuestionElement(currentQuestion.text);
 
+  // adding score live status during the quiz,
+  let scoreEl = document.getElementById('current-score');
+  if (!scoreEl) {
+    scoreEl = document.createElement('div');
+    scoreEl.id = 'current-score';
+    userInterface.appendChild(scoreEl);
+  }
+  scoreEl.textContent = ` Your score: ${quizData.scoreResult}`;
+
+  // extra,  allowing for new styling if the score is higher than 5
+  if (quizData.scoreResult > 5) {
+    scoreEl.classList.add('good-score');
+  } else {
+    scoreEl.classList.remove('good-score');
+  }
+
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -23,6 +39,11 @@ export const initQuestionPage = () => {
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
+
+    // here added listener to be able to select answer anywhere on the li elemnt not only on the btn
+    const input = answerElement.querySelector('input');
+
+    answerElement.addEventListener('click', () => input.click());
 
     // found element with tag input and listener. Look checked radioButton or not. if yes value this btn is  currentQuestion.selected
     answerElement

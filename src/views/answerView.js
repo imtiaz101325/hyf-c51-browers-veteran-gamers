@@ -8,8 +8,8 @@ export const createAnswerElement = (key, answerText) => {
   element.innerHTML = String.raw`
   <div>
     <input type="radio" id="${key}" name="radioButton" value="${key}" />
-    <label>${key}: ${answerText}</label>
-  </div>
+    <label>  ${key}: ${answerText}</label>
+    </div>
   `;
 
   return element;
