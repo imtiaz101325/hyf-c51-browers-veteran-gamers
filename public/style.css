@@ -85,3 +85,11 @@ h1 {
   background: rgb(0, 85, 160);
   transform: scale(1.03);
 }
+#current-score{
+  color: #000000;
+}
+#current-score.good-score{
+  color: green;
+  font-weight: bold;
+}
+
