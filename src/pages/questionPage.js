@@ -41,7 +41,6 @@ export const initQuestionPage = () => {
   } else {
     scoreEl.classList.remove('good-score');
   }
-
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
