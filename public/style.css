@@ -50,7 +50,7 @@ body {
 h1 {
   color: #4a4a4a;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
+  font-size: 22px;
   font-weight: bold;
   text-align: center;
   margin: 10px;
@@ -117,6 +117,17 @@ input#player-name-id {
   background-color: rgb(49, 121, 49);
   transition: width 0.5 ease-in-out;
 }
+@keyframes fancyanimate {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 #answers-list {
   color: #030303;
   font-weight: 500;
@@ -125,6 +136,8 @@ input#player-name-id {
   margin: 20px 0;
   text-align: left;
   border-radius: 4;
+  opacity: 0;
+  animation: fancyanimate 0.7s ease-out forwards;
 }
 
 #answers-list li {
@@ -221,4 +234,36 @@ ul#answers-list li.wrongAnswer {
 
 #skip-question-button:hover {
   background-color: #d43f26; /* Darker red on hover */
+}
+.final-gif {
+  margin: 10px auto;
+  max-width: 150%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Added .highlight-correct class */
+.highlight-correct {
+  background-color: green;
+  font-weight: bold;
+}
+
+/*  styles for skip-question button */
+#skip-question-button {
+  background-color: #f04e30;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px; /* rounded corners */
+  cursor: pointer;
+}
+
+#skip-question-button:hover {
+  background-color: #d43f26; /* Darker red on hover */
+.final-gif {
+  margin: 10px auto;
+  max-width: 150%;
+  height: auto;
+  border-radius: 20px;
 }

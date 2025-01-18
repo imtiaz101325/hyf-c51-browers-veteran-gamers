@@ -31,10 +31,14 @@ export const initQuestionPage = () => {
   } else {
     scoreEl.classList.remove('good-score');
   }
-
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+
+  const nextButton = document.getElementById(NEXT_QUESTION_BUTTON_ID); // Reference Next Question button
+  //stop Next button from working initially and add a tooltip
+  nextButton.disabled = true;
+  nextButton.title = 'Please select an option';
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
@@ -67,6 +71,10 @@ export const initQuestionPage = () => {
         } else {
           currentLi.classList.add('wrongAnswer');
         }
+
+        // Enable Next button when an option is selected and remove the tooltip
+        nextButton.disabled = false;
+        nextButton.title = '';
       }
     });
 
