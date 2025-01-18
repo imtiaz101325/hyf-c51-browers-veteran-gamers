@@ -8,7 +8,20 @@ export const initFinalPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const finalPageElement = createFinalPAgeElement();
+  // final page element that will update the message and the gif
+  const playerName = localStorage.getItem('playerName') || 'player';
+
+  let finalMessage, gif;
+
+  if (quizData.scoreResult >= 7) {
+    finalMessage = `Well done Veteran, ${playerName}`;
+    gif = 'public/gif-wow.gif';
+  } else {
+    finalMessage = ` Maybe you need to play more, ${playerName}. Try later`;
+    gif = 'public/gif-fail.gif';
+  }
+
+  const finalPageElement = createFinalPAgeElement(finalMessage, gif);
   userInterface.appendChild(finalPageElement);
 
   document
