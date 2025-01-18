@@ -93,7 +93,8 @@ export const initQuestionPage = () => {
       .addEventListener('click', nextQuestion);
   }
 
-  //  to make sure the skip button exists before attaching the event listener
+  // Connects the Skip Button and manages navigation to the next or final page.
+
   const skipButton = document.getElementById(SKIP_QUESTION_BUTTON_ID);
   if (skipButton) {
     skipButton.addEventListener('click', skipQuestion);
@@ -118,9 +119,8 @@ const nextQuestion = () => {
   initQuestionPage();
 };
 
-// Updated skipQuestion function
 const skipQuestion = () => {
-  //to fetch the answers list element
+  // to fetch the answers list element
   const answersList = document.getElementById(ANSWERS_LIST_ID);
 
   if (!answersList) {
@@ -143,9 +143,15 @@ const skipQuestion = () => {
     console.error('Correct answer element not found!');
   }
 
-  // Move to the next question after a short delay
+  // Move to the next page or final page after some delay
   setTimeout(() => {
-    quizData.currentQuestionIndex += 1;
-    initQuestionPage();
+    if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
+      // If it's the last question, go to the final page
+      initFinalPage();
+    } else {
+      // Otherwise, move to the next question
+      quizData.currentQuestionIndex += 1;
+      initQuestionPage();
+    }
   }, 1000);
 };
