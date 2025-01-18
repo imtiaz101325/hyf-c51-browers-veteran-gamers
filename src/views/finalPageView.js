@@ -7,6 +7,6 @@ export const createFinalPAgeElement = () => {
   finalPageElement.innerHTML = String.raw`
     <p class="final-message"> Well done! ${playerName} </p>
     <p class="final-message"> Your score result is : ${quizData.scoreResult} out of ${quizData.questions.length} </p>
-    <button id = ${RESTART_GAME_BUTTON_ID}>Restart the quiz</button>`;
+    <button id = ${RESTART_GAME_BUTTON_ID}>RESTART </button>`;
   return finalPageElement;
 };
