@@ -9,15 +9,15 @@ export const initFinalPage = () => {
   userInterface.innerHTML = '';
 
   // final page element that will update the message and the gif
-  const playerName = localStorage.getItem('playerName') || 'player';
+  const playerName = quizData.playerName || 'player';
 
   let finalMessage, gif;
 
   if (quizData.scoreResult >= 7) {
-    finalMessage = `Well done Veteran, ${playerName}`;
+    finalMessage = `Well done Veteran, ${quizData.playerName}`;
     gif = 'public/gif-wow.gif';
   } else {
-    finalMessage = ` Maybe you need to play more, ${playerName}. Try later`;
+    finalMessage = ` Maybe you need to play more, ${quizData.playerName}. Try later`;
     gif = 'public/gif-fail.gif';
   }
 

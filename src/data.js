@@ -10,6 +10,7 @@
 */
 
 export const quizData = {
+  playerName: '',
   currentQuestionIndex: 0,
   scoreResult: 0, // the secore result of the quiz have inial value  0
   // the questions in the quiz
