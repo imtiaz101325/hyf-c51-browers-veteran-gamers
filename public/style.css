@@ -261,6 +261,7 @@ ul#answers-list li.wrongAnswer {
 
 #skip-question-button:hover {
   background-color: #d43f26; /* Darker red on hover */
+}
 .final-gif {
   margin: 10px auto;
   max-width: 150%;
