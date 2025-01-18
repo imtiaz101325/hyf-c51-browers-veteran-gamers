@@ -107,6 +107,17 @@ input#player-name-id {
   background-color: rgb(49, 121, 49);
   transition: width 0.5 ease-in-out;
 }
+@keyframes fancyanimate {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 #answers-list {
   color: #030303;
   font-weight: 500;
@@ -115,6 +126,8 @@ input#player-name-id {
   margin: 20px 0;
   text-align: left;
   border-radius: 4;
+  opacity: 0;
+  animation: fancyanimate 0.7s ease-out forwards;
 }
 
 #answers-list li {

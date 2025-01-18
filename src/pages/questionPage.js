@@ -41,7 +41,6 @@ export const initQuestionPage = () => {
   } else {
     scoreEl.classList.remove('good-score');
   }
-
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -58,6 +57,13 @@ export const initQuestionPage = () => {
     input.addEventListener('change', function () {
       if (this.checked) {
         currentQuestion.selected = this.id;
+
+        // disable the inputs to prevent the user from changing his answers
+
+        const answerOptions = document.querySelectorAll(
+          `#${ANSWERS_LIST_ID} input`
+        );
+        answerOptions.forEach((option) => (option.disabled = true));
 
         // remove all classes before choice
         listItems.forEach((listItem) => {
