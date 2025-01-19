@@ -172,6 +172,22 @@ input#player-name-id {
   transform: scale(1.03);
 }
 
+#skip-question-button {
+  background: #001230;
+  color: #fff;
+  font-weight: 500;
+  width: 150px;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+#skip-question-button:hover {
+  background: rgb(0, 85, 160);
+  transform: scale(1.03);
+}
+
 ul#answers-list li.correctAnswer {
   background-color: lightgreen;
 }
@@ -215,53 +231,11 @@ ul#answers-list li.wrongAnswer {
   padding: 5px;
 }
 
-/* Added .highlight-correct class */
 .highlight-correct {
   background-color: green;
   font-weight: bold;
 }
 
-/*  styles for skip-question button */
-#skip-question-button {
-  background-color: #f04e30;
-  color: white;
-  font-size: 16px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px; /* rounded corners */
-  cursor: pointer;
-}
-
-#skip-question-button:hover {
-  background-color: #d43f26; /* Darker red on hover */
-}
-.final-gif {
-  margin: 10px auto;
-  max-width: 150%;
-  height: auto;
-  border-radius: 20px;
-}
-
-/* Added .highlight-correct class */
-.highlight-correct {
-  background-color: green;
-  font-weight: bold;
-}
-
-/*  styles for skip-question button */
-#skip-question-button {
-  background-color: #f04e30;
-  color: white;
-  font-size: 16px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px; /* rounded corners */
-  cursor: pointer;
-}
-
-#skip-question-button:hover {
-  background-color: #d43f26; /* Darker red on hover */
-}
 .final-gif {
   margin: 10px auto;
   max-width: 150%;
