@@ -4,6 +4,7 @@
  */
 export const createAnswerElement = (key, answerText) => {
   const element = document.createElement('li');
+  element.setAttribute('data-answer', key); // Add data-answer attribute to <li>
   element.id = `${key}`;
   element.innerHTML = String.raw`
 
