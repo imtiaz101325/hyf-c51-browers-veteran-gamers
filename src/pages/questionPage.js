@@ -16,6 +16,17 @@ export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionElement = createQuestionElement(currentQuestion.text);
 
+  // creating a progress bar to indicate for the user how far he is progressing.
+  const progressBarEl = document.createElement('div');
+  progressBarEl.classList.add('progress-bar-element');
+  const progressBar = document.createElement('div');
+  progressBar.classList.add('progress-bar');
+  progressBarEl.appendChild(progressBar);
+  userInterface.appendChild(progressBarEl);
+  const progress =
+    (quizData.currentQuestionIndex / quizData.questions.length) * 100;
+  progressBar.style.width = `${progress}%`;
+
   // adding score live status during the quiz,
   let scoreEl = document.getElementById('current-score');
   if (!scoreEl) {
@@ -52,6 +63,13 @@ export const initQuestionPage = () => {
     input.addEventListener('change', function () {
       if (this.checked) {
         currentQuestion.selected = this.id;
+
+        // disable the inputs to prevent the user from changing his answers
+
+        const answerOptions = document.querySelectorAll(
+          `#${ANSWERS_LIST_ID} input`
+        );
+        answerOptions.forEach((option) => (option.disabled = true));
 
         // remove all classes before choice
         listItems.forEach((listItem) => {
